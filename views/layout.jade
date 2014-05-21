@@ -9,14 +9,15 @@ html
       header.row
         .col-md-offset-1.col-md-8.col-xs-12
           #title
-            h1 Vito Galatro - Web Application Developer
+            h1 
+              a(href='/').site-title Vito Galatro - Web Application Developer
       .row
-        .col-md-offset-1.col-md-6.col-xs-12
+        .col-md-offset-1.col-md-8.col-xs-12
           #content
             block content
         .col-md-2.col-xs-12
           #sidebar
-            block sidebar
+            include sidebar
       footer.row
         .col-md-offset-1.col-md-8.col-xs-12
           #tag-line
