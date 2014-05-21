@@ -1,0 +1,29 @@
+@import 'nib'
+
+@import url('http://fonts.googleapis.com/css?family=Titillium+Web')
+@import url('http://fonts.googleapis.com/css?family=Roboto+Slab')
+
+font-color-main = #ddd
+bg-color-main = #333
+
+font-color-content = #111
+bg-color-content = #eee
+
+default-padding = 10px
+
+body
+  color font-color-main
+  background bg-color-main
+  font-family 'Roboto Slab'
+
+header, footer
+  font-family 'Titillium Web'
+
+#content
+  color font-color-content
+  background bg-color-content
+  padding default-padding
+  border-radius default-padding
+
+#title, #tag-line, #content, #sidebar
+  margin default-padding

@@ -28,8 +28,9 @@ app.get('/', function(req, res) {
   });
 });
 
-app.get('/hello.txt', function(req, res) {
-  res.send('Hello World!');
+app.get('/about', function(req, res) {
+  res.render('about.jade', {
+    title : 'Vito Galatro | About'
+  });
 });
-
 

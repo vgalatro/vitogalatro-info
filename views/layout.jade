@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    .container-fluid
+      header.row
+        .col-md-offset-1.col-md-8.col-xs-12
+          #title
+            h1 Vito Galatro - Web Application Developer
+      .row
+        .col-md-offset-1.col-md-6.col-xs-12
+          #content
+            block content
+        .col-md-2.col-xs-12
+          #sidebar
+            block sidebar
+      footer.row
+        .col-md-offset-1.col-md-8.col-xs-12
+          #tag-line
+            small This site is built using node.js, the Express framework, and the Jade templating engine.
