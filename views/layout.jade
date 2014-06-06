@@ -4,20 +4,24 @@ html
     title #{title}
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/style.css')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js')
   body
-    .container-fluid
+    .container-fluid(ng-app)
       header.row
-        .col-md-offset-1.col-md-8.col-xs-12
+        .col-md-offset-1.col-md-8.col-sm-9
           #title
             h1 
               a(href='/').site-title Vito Galatro - Web Application Developer
+        .col-sm-3.visible-sm
+          include includes/navlist-mobile
       .row
         .col-md-offset-1.col-md-8.col-xs-12
           #content
             block content
         .col-md-2.col-xs-12
           #sidebar
-            include sidebar
+            include includes/sidebar
       footer.row
         .col-md-offset-1.col-md-8.col-xs-12
           #tag-line

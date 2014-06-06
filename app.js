@@ -22,15 +22,30 @@ app.use(express.static(__dirname + '/public'));
 /* Start app */
 app.listen(3000);
 
+/* global variables */
+
+var title_suffix = ' | Vito Galatro - Web Application Developer'
+
 app.get('/', function(req, res) {
   res.render('index.jade', {
-    title : 'Vito Galatro | Web Application Developer'
+    title : 'Home' + title_suffix
   });
 });
 
 app.get('/about', function(req, res) {
   res.render('about.jade', {
-    title : 'Vito Galatro | About'
+    title : 'About' + title_suffix
   });
 });
 
+app.get('/portfolio', function(req, res) {
+  res.render('portfolio.jade', {
+    title : 'Portfolio' + title_suffix
+  });	
+});
+
+app.get('/contact', function(req, res) {
+  res.render('contact.jade', {
+    title : 'Contact' + title_suffix
+  });	
+});
