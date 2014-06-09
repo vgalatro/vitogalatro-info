@@ -8,21 +8,14 @@ html
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js')
   body
     .container-fluid(ng-app)
-      header.row
-        .col-md-offset-1.col-md-8.col-sm-9
-          #title
-            h1 
-              a(href='/').site-title Vito Galatro - Web Application Developer
-        .col-sm-3.visible-sm
-          include includes/navlist-mobile
       .row
-        .col-md-offset-1.col-md-8.col-xs-12
+        include includes/header
+      .row
+        
+          include includes/navlist
+      .row
+        .col-md-offset-2.col-md-8.col-sm-offset-1.col-sm-10.col-xs-12
           #content
             block content
-        .col-md-2.col-xs-12
-          #sidebar
-            include includes/sidebar
-      footer.row
-        .col-md-offset-1.col-md-8.col-xs-12
-          #tag-line
-            small This site is built using node.js, the Express framework, and the Jade templating engine.
+      .row
+        include includes/footer

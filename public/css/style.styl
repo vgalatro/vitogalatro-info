@@ -3,6 +3,8 @@
 @import url('http://fonts.googleapis.com/css?family=Titillium+Web')
 @import url('http://fonts.googleapis.com/css?family=Roboto+Slab')
 
+/* Variables */
+
 font-color-main = #ddd
 bg-color-main = #333
 
@@ -11,31 +13,49 @@ bg-color-content = #eee
 
 default-padding = 10px
 
+/* Basic Styling */
+
 body
   color font-color-main
   background bg-color-main
   font-family 'Roboto Slab'
 
-header, footer, #sidebar
+header, footer, nav
   font-family 'Titillium Web'
 
 a, a:hover, a:focus
   color inherit
 
-ul
-  padding 0px
+/* Header */
 
-li
-  list-style none
+header
+  text-align center
 
 a.site-title, a.site-title:hover, a.site-title:focus
   text-decoration none
+  
+#title, #subtitle
+  margin-top default-padding
+
+/* Nav bar */
+
+nav
+  overflow auto
+
+nav ul
+  padding 0px
+  float right
+  overflow auto
+
+nav li
+  list-style none
+  float left
+  margin-right default-padding
+
+/* Content area */
 
 #content
   color font-color-content
   background bg-color-content
   padding default-padding
   border-radius default-padding
-
-#title, #tag-line, #content, #sidebar
-  margin default-padding
