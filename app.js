@@ -24,7 +24,7 @@ app.listen(3000);
 
 /* global variables */
 
-var title_suffix = ' | Vito Galatro - Web Application Developer'
+var title_suffix = ' | Vito Galatro - Web Application Developer';
 
 app.get('/', function(req, res) {
   res.render('index.jade', {
