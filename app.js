@@ -1,39 +1,25 @@
-var express = require('express'),
-  stylus = require('stylus'),
-  nib = require('nib');
-var app = express();
+var cluster = require('cluster');
 
-/* Set-up app */
-
-function compile(str, path) {
-  return stylus(str)
-    .set('filename', path)
-    .use(nib());
+if (cluster.isMaster) {
+  
+  /* Include os library and count CPUs */
+  var os = require('os');
+  var cpus = os.cpus().length;
+  
+  /* Create workers based on CPU count */
+  for (var i = 0; i < cpus; i++) {
+    cluster.fork();
+  }
+  
+  /* Replace workers that fall in the line of duty */
+  cluster.on('exit', function (worker) {
+    cluster.fork();
+  });
+  
+} else {
+  
+  /* Start app */
+  var vgi = require('./vgi.js')
+  vgi.runApp();
+    
 }
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
-app.use(express.logger('dev'));
-app.use(stylus.middleware({ 
-  src: __dirname + '/public', 
-  compile: compile
-}));
-app.use(express.static(__dirname + '/public'));
-
-/* Start app */
-app.listen(3000);
-
-/* Variables */
-
-var title_suffix = ' | Vito Galatro - Web Application Developer';
-
-app.get('/', function(req, res) {
-  res.render('index.jade', {
-    title : 'Portfolio' + title_suffix
-  });
-});
-
-app.get('/about', function(req, res) {
-  res.render('about.jade', {
-    title : 'About' + title_suffix
-  });
-});
