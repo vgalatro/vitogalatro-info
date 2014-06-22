@@ -11,5 +11,4 @@ Techonologies used:
 * [Stylus CSS Engine](http://learnboost.github.io/stylus/)
 * [nib](http://visionmedia.github.io/nib/)
 * [jQuery](http://jquery.com/)
-* [AngularJS](https://angularjs.org/)
 * [Bootstrap CSS](http://getbootstrap.com/)
