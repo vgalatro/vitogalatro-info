@@ -1,9 +1,12 @@
 exports.runApp = function () {
 
-  /* Express App */
+  /* Includes */
   var express = require('express'),
     stylus = require('stylus'),
     nib = require('nib');
+  
+
+  /* Define Express app */
   var app = express();
   
   /* Init Stylus */
